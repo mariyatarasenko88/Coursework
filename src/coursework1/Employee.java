@@ -3,11 +3,11 @@ package coursework1;
 public class Employee {
     private String fullName;
     private int department;
-    private int salary;
+    private double salary;
     private static int counter;
     private int id;
 
-    public Employee (String fullName, int department, int salary) {
+    public Employee (String fullName, int department, double salary) {
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
@@ -19,7 +19,7 @@ public class Employee {
     public int getDepartment() {
         return department;
     }
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
     public int getId() {
@@ -28,7 +28,7 @@ public class Employee {
     public void setDepartment(int department) {
         this.department = department;
     }
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
     @Override

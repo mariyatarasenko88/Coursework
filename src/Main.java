@@ -1,49 +1,50 @@
 import coursework1.Employee;
 
 public class Main {
-    public static int salarySum(Employee[] employee) {
-        int sum = 0;
-        for (int i = 0; i < employee.length; i++) {
-            sum = sum + employee[i].getSalary();
+    public static double salarySum(Employee[] employee) {
+        double sum = 0;
+        for (Employee e : employee) {
+            sum += e.getSalary();
         }
         return sum;
     }
     public static double averageSalary(Employee[] employee) {
         double averageSalary = 0;
-        for(int i = 0; i < employee.length; i++) {
-            averageSalary += employee[i].getSalary();
+        for(Employee e : employee) {
+            averageSalary += e.getSalary();
         }
         System.out.println("Среднее значение зарплат = " + averageSalary / employee.length);
 
         return averageSalary / employee.length;
 
     }
-    public static int minSalary(Employee[] employee) {
-        int min = employee[0].getSalary();
-        for(int i = 0; i < employee.length; i++)
-            if (employee[i].getSalary() < min) {
-                min = employee[i].getSalary();
+    public static double minSalary(Employee[] employee) {
+        double min = employee[0].getSalary();
+        for(Employee e : employee)
+            if (e.getSalary() < min) {
+                min = e.getSalary();
             }
         return min;
     }
-    public static int maxSalary(Employee[] employee) {
-        int max = employee[0].getSalary();
-        for (int i = 0; i < employee.length; i++)
-            if (employee[i].getSalary() > max) {
-                max = employee[i].getSalary();
+    public static double maxSalary(Employee[] employee) {
+        double max = employee[0].getSalary();
+        for (Employee e : employee)
+            if (e.getSalary() > max) {
+                max = e.getSalary();
             }
         return max;
     }
     public static void giveName(Employee[] employee) {
-        for (int i = 0; i < employee.length; i++)
-            System.out.println(employee[i].getFullName());
+        for (Employee e : employee)
+            System.out.println(e.getFullName());
     }
     public static void salaryIndexing(Employee[] employee) {
         double salaryPercent = 0;
         double percent = 0.01;
-        for (int i = 0; i < employee.length; i++) {
-            salaryPercent = (employee[i].getSalary() * percent) + employee[i].getSalary();
-            System.out.println("Зарплата после индексации  "  + salaryPercent  + " рублей ");
+        for (Employee e : employee) {
+            salaryPercent = (e.getSalary() * percent) + e.getSalary();
+            e.setSalary(salaryPercent);
+            System.out.println("Зарплата после индексации  "  + e.getSalary()  + " рублей ");
         }
 
 
@@ -69,18 +70,18 @@ public class Main {
             System.out.println(e);
         }
         System.out.println();
-        int sum = salarySum(employee);
+        double sum = salarySum(employee);
         System.out.println("Сумма затрат на зарплаты в месяц= " + sum);
 
         System.out.println();
         averageSalary(employee);
 
         System.out.println();
-        int min = minSalary(employee);
+        double min = minSalary(employee);
         System.out.println("Сотрудник с минимальной зарплатой " + min);
 
         System.out.println();
-        int max = maxSalary(employee);
+        double max = maxSalary(employee);
         System.out.println("Сотрудник с минимальной зарплатой " + max);
 
         System.out.println();
@@ -88,6 +89,7 @@ public class Main {
 
         System.out.println();
         salaryIndexing(employee);
+
 
         
 
