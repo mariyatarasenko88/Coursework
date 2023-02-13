@@ -1,14 +1,14 @@
 import coursework1.Employee;
 
 public class Main {
-    public static double salarySum(Employee[] employee) {
+    public static double salarySum() {
         double sum = 0;
         for (Employee e : employee) {
             sum += e.getSalary();
         }
         return sum;
     }
-    public static double averageSalary(Employee[] employee) {
+    public static double averageSalary() {
         double averageSalary = 0;
         for(Employee e : employee) {
             averageSalary += e.getSalary();
@@ -18,7 +18,7 @@ public class Main {
         return averageSalary / employee.length;
 
     }
-    public static double minSalary(Employee[] employee) {
+    public static double minSalary() {
         double min = employee[0].getSalary();
         for(Employee e : employee)
             if (e.getSalary() < min) {
@@ -26,7 +26,7 @@ public class Main {
             }
         return min;
     }
-    public static double maxSalary(Employee[] employee) {
+    public static double maxSalary() {
         double max = employee[0].getSalary();
         for (Employee e : employee)
             if (e.getSalary() > max) {
@@ -34,11 +34,11 @@ public class Main {
             }
         return max;
     }
-    public static void giveName(Employee[] employee) {
+    public static void giveName() {
         for (Employee e : employee)
             System.out.println(e.getFullName());
     }
-    public static void salaryIndexing(Employee[] employee) {
+    public static void salaryIndexing() {
         double salaryPercent = 0;
         double percent = 0.01;
         for (Employee e : employee) {
@@ -70,25 +70,25 @@ public class Main {
             System.out.println(e);
         }
         System.out.println();
-        double sum = salarySum(employee);
+        double sum = salarySum();
         System.out.println("Сумма затрат на зарплаты в месяц= " + sum);
 
         System.out.println();
-        averageSalary(employee);
+        averageSalary();
 
         System.out.println();
-        double min = minSalary(employee);
+        double min = minSalary();
         System.out.println("Сотрудник с минимальной зарплатой " + min);
 
         System.out.println();
-        double max = maxSalary(employee);
-        System.out.println("Сотрудник с минимальной зарплатой " + max);
+        double max = maxSalary();
+        System.out.println("Сотрудник с максимальной зарплатой " + max);
 
         System.out.println();
-        giveName(employee);
+        giveName();
 
         System.out.println();
-        salaryIndexing(employee);
+        salaryIndexing();
 
 
         
